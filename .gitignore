@@ -1,9 +1,10 @@
+.DS_Store
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log*git@github.com:elcaine/14-Blogging-Techy.git
 lerna-debug.log*
 .pnpm-debug.log*
 
