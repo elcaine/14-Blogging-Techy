@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog!</title>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -14,11 +18,11 @@
     <header class="display-flex justify-space-between align-center p-2">
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">Dashboard</a></li>
-            <li><!-- Conditionally render login or logout links -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/dash">Dashboard</a></li>
+            <li>
               {{#if logged_in}}
-              <a href="/profile">profile</a> |
+              {{!-- <a href="/profile">profile</a> | --}}
               <button class="no-button" id="logout">logout</button>
               {{else}}
               <a href="/login">login</a>
@@ -33,6 +37,7 @@
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+      {{!-- <h2 id="cow">testes!!!</h2> --}}
     </main>
     <footer>
       
@@ -43,6 +48,9 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  {{!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> --}}
+  <script src="/js/homepage.js"></script>
+  {{!-- <script>$('#cow').on('click', function(){ console.log('how now brown cow???');});</script> --}}
 </body>
 
 </html>
