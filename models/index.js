@@ -35,3 +35,9 @@ Comment.belongsTo(User, {
 });
 
 module.exports = { User, BlogPost, Comment };
+
+
+// *****   holding from main.handlebars just in case it's needed (from bottom)
+// <script>$('#cow').on('click', function(){ console.log('how now brown cow???');});</script>
+// <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+// <script src="/js/homepage.js"></script>

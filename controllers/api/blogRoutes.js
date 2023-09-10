@@ -3,7 +3,6 @@ const {BlogPost } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-  // TODO:  more for creation??
   try {
     const newBlog = await BlogPost.create({
       ...req.body,
@@ -33,6 +32,18 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(200).json(blogData);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const newBlog = await BlogPost.findByPk(req.params.id);
+    await newBlog.update({ ...req.body});
+    await newBlog.save();
+
+    res.status(200).json(newBlog);
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 

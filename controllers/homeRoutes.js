@@ -2,6 +2,18 @@ const router = require('express').Router();
 const { BlogPost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/comment/:id', async (req, res) => {
+  try {
+    res.render('addComment', {
+      id: req.params.id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -27,6 +39,26 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/post/new', async (req, res) =>{
+  try {
+    res.render('addblog');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/post/update/:id', async (req, res) =>{
+  try {
+    res.render('addblog', {
+      update: true,
+      id: req.params.id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await BlogPost.findByPk(req.params.id, {
@@ -41,10 +73,10 @@ router.get('/post/:id', async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-    /*    */ console.log('$$$$$$$$$$$$$$$ ', post);
     res.render('post', {
       ...post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      blog_id: req.params.id
     });
   } catch (err) {
     res.status(500).json(err);
@@ -61,7 +93,6 @@ router.get('/dash', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-/*    */ console.log('data: ', user);
     res.render('dash', {
       ...user,
       logged_in: true

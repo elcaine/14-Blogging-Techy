@@ -35,9 +35,7 @@
       </h1>
     </header>
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
       {{{ body }}}
-      {{!-- <h2 id="cow">testes!!!</h2> --}}
     </main>
     <footer>
       
@@ -48,9 +46,10 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  {{!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> --}}
-  <script src="/js/homepage.js"></script>
-  {{!-- <script>$('#cow').on('click', function(){ console.log('how now brown cow???');});</script> --}}
+  <script src="/js/dash.js"></script>  
+  <script src="/js/addblog.js"></script>
+  <script src="/js/addcomment.js"></script>
+  {{!-- Other scripts being held in models/index.js just in case they were/are needed --}}
 </body>
 
 </html>

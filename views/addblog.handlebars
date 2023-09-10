@@ -1,0 +1,30 @@
+<div class="row mt-4">
+  <div class="col-md-6">
+    {{#if update}}
+    <h3 id="update">Update id: <span id="idd">{{id}}</span></h3>
+    {{else}}
+    <h3 id="update">Create a New Blog Post:</h3>
+    {{/if}}
+
+
+    <form class="form new-project-form" id="new-blog-form">
+      <div class="form-group">
+        <label for="project-name">Blog title:</label>
+        <input class="form-input" type="text" id="blog-title" name="project-name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="project-desc">Contents:</label>
+        <textarea class="form-input" id="blog-contents" name="project-desc"></textarea>
+      </div>
+      <div class="form-group">
+        {{#if update}}
+        <button type="submit" class="btn btn-primary">Update</button>
+        {{else}}
+        <button type="submit" class="btn btn-primary">Create</button>
+        {{/if}}
+      </div>
+    </form>
+  </div>
+
+</div>
