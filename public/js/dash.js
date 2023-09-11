@@ -26,11 +26,14 @@ const updateButtonHandler = async (event) => {
 // This caputures button clicked to initiate add-comment (takes to add-comment-form)
 const addCommentHandler = async (event) => {
   event.preventDefault();
-  const did = event.currentTarget.id;
+  const did = await event.currentTarget.id;
   console.log('$$$$$$$$$$$$... did: ', did, '\tevent... ', event.target);
   // const did = event.target.getAttribute('data-id');
   // console.log('$$$$$$$$$$$$$$$$$$$... ', event.target, '\tdid... ', did);
-  document.location.replace(`/comment/${did}`);
+  if(!did){ return;}
+  else{
+    document.location.replace(`/comment/${did}`);
+  }
 };
 
 // Create/add comment to blog post
