@@ -19,7 +19,7 @@ Blogging website for tech gurus and learners to make posts and comment on such p
 
 ## Links
 ### [Link to repo](https://github.com/elcaine/14-Blogging-Techy)
-### [Link to app](https://www.herokuapp.com/)
+### [Link to app](https://techy-hero-blogging-ea74f2fd9a7c.herokuapp.com/)
 
 ### Acknowledged sources
 - Activity 28 from this module is the basis for this project.
