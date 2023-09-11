@@ -1,5 +1,6 @@
 const delButtonHandler = async (event) => {
   event.stopPropagation();
+  event.preventDefault();
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -10,7 +11,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dash');
     } else {
-      alert('Failed to delete project');
+      console.log('Failed to delete project');
     }
   }
 };
@@ -20,7 +21,6 @@ const updateButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
     document.location.replace(`/post/update/${id}`);
-
   }
 };
 
@@ -28,7 +28,6 @@ const updateButtonHandler = async (event) => {
 const addCommentHandler = async (event) => {
   event.preventDefault();
   const did = await event.currentTarget.id;
-  // console.log('$$$$$$$$$$$$... did: ', did, '\tevent... ', event.target);
   if(!did){ return;}
   else{
     document.location.replace(`/comment/${did}`);
