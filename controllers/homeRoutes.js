@@ -3,16 +3,18 @@ const { BlogPost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/comment/:id', async (req, res) => {
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
   try {
     const x = await req.session.logged_in;
+    const id = req.params.id;
     if(!x){
       console.log('Must be logged in');
       res.redirect('/login');
+      // res.redirect('/login');
       return;
     }
-    res.render('addComment', {
-      id: req.params.id,
+    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+    res.render('addcomment', {
+      id,
     });
   } catch (err) {
     res.status(500).json(err);
