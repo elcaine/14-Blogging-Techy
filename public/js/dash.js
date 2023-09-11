@@ -27,7 +27,7 @@ const updateButtonHandler = async (event) => {
 const addCommentHandler = async (event) => {
   event.preventDefault();
   const did = await event.currentTarget.id;
-  console.log('$$$$$$$$$$$$... did: ', did, '\tevent... ', event.target);
+  // console.log('$$$$$$$$$$$$... did: ', did, '\tevent... ', event.target);
   if(!did){ return;}
   else{
     document.location.replace(`/comment/${did}`);
