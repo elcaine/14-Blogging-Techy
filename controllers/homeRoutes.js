@@ -4,6 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.get('/comment/:id', async (req, res) => {
   try {
+    if(!req.session.logged_in){
+      console.log('Must be logged in');
+      res.redirect('/login');
+      return;
+    }
     res.render('addComment', {
       id: req.params.id,
     });
