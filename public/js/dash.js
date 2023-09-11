@@ -28,8 +28,6 @@ const addCommentHandler = async (event) => {
   event.preventDefault();
   const did = await event.currentTarget.id;
   console.log('$$$$$$$$$$$$... did: ', did, '\tevent... ', event.target);
-  // const did = event.target.getAttribute('data-id');
-  // console.log('$$$$$$$$$$$$$$$$$$$... ', event.target, '\tdid... ', did);
   if(!did){ return;}
   else{
     document.location.replace(`/comment/${did}`);
