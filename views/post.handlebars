@@ -2,18 +2,19 @@
   <h2>{{title}}</h2>
   <p>{{contents}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>user_id: {{user_id}}... blog_id: {{blog_id}}</p>
   <div>__________________________________________________________</div>
 
   <h3> Trolling (comments) </h3>
   {{#each comments as |com|}}
-    <p>
+    <div class="card">
+      <p>
       <span for="img" aria-label="money">Comment {{count @index}}:&emsp;</span>
       <span class="dollar-amount">{{com.contents}}</span>
     </p>
+    </div>
     {{/each}}
   
   <p>
-    <button class="btn btn-primary" id="comment-btn" data-id="{{{blog_id}}}">Add comment</button>
+    <button class="btn btn-primary comment-btn" id="{{{blog_id}}}" data-id="{{{blog_id}}}">Add comment</button>
   </p>
 </div>

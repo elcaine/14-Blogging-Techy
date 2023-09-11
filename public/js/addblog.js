@@ -7,8 +7,8 @@ const newFormHandler = async (event) => {
     if (title && contents) {
       let response; 
       const idd = $('#idd').text();
-      // UPDATE
-      if(idd){
+      
+      if(idd){ // UPDATE existing blog
         console.log('Established blog being restablished');
           response = await fetch(`/api/blogs/${idd}`, {
             method: 'PUT',
@@ -18,15 +18,12 @@ const newFormHandler = async (event) => {
             },
           });
         
-        console.log('response: ', response);
         if (response.ok) {
           document.location.replace('/dash');
         } else {
-          alert('Failed to create blog');
+          alert('Failed to update blog');
         }
-      } 
-      // NEW  BLOG
-      else {
+      } else { // NEW BLOG created
         console.log('New blog being made');
          const response = await fetch(`/api/blogs`, {
           method: 'POST',
@@ -36,17 +33,12 @@ const newFormHandler = async (event) => {
           },
         });
 
-
         if (response.ok) {
           document.location.replace('/dash');
         } else {
           alert('Failed to create blog');
         }
       }
-
-
-  
-
     }
   };
 

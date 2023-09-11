@@ -14,21 +14,21 @@
   </div>
 
   {{#if blogposts.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 project-list" id="blog">
     <h3>Current Blogs:</h3>
 
     {{#each blogposts as |blog|}}
-    <div class="row mb-2">
+    <div class="row mb-2 card" id="{{blog.id}}">
       <div class="col-md-8">
         <h4><a href="/post/{{blog.id}}">{{blog.title}}</a></h4>
         <p>{{blog.contents}}</p>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" id="del-{{blog.id}}" data-id="{{blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger card" id="del-{{blog.id}}" data-id="{{blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-primary update card" id="upd-{{blog.id}}" data-id="{{{blog.id}}}">UPDATE</button>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-primary update" id="upd-{{blog.id}}" data-id="{{{blog.id}}}">UPDATE</button>
-      </div>
+      {{!-- <div class="col-md-4">
+      </div> --}}
     </div>
     {{/each}}
   </div>

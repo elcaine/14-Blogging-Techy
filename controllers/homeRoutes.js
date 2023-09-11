@@ -12,11 +12,9 @@ router.get('/comment/:id', async (req, res) => {
   }
 });
 
-
-
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all blogs and JOIN with user data
     const blogData = await BlogPost.findAll({
       include: [
         {
@@ -57,7 +55,6 @@ router.get('/post/update/:id', async (req, res) =>{
     res.status(500).json(err);
   }
 });
-
 
 router.get('/post/:id', async (req, res) => {
   try {

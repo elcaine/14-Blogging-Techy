@@ -14,8 +14,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/'); /*    */ // just removed "profile" after the "/"  (same down below)
+      // If successful, redirect the browser to the homepage
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

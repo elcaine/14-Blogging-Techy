@@ -22,10 +22,9 @@
             <li><a href="/dash">Dashboard</a></li>
             <li>
               {{#if logged_in}}
-              {{!-- <a href="/profile">profile</a> | --}}
-              <button class="no-button" id="logout">logout</button>
+                <button class="no-button" id="logout">logout</button>
               {{else}}
-              <a href="/login">login</a>
+                <a href="/login">login</a>
               {{/if}}
             </li>
         </ul>
@@ -49,7 +48,6 @@
   <script src="/js/dash.js"></script>  
   <script src="/js/addblog.js"></script>
   <script src="/js/addcomment.js"></script>
-  {{!-- Other scripts being held in models/index.js just in case they were/are needed --}}
 </body>
 
 </html>
