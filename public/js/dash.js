@@ -28,7 +28,7 @@ const addCommentHandler = async (event) => {
   event.preventDefault();
   // console.log('$$$$$$$$$$$$ ', event.target);
   const did = event.target.getAttribute('data-id');
-  alert('$$$$$$$$$$$$$$$$$$$... ', event.target, '\tdid... ', did);
+  console.log('$$$$$$$$$$$$$$$$$$$... ', event.target, '\tdid... ', did);
   document.location.replace(`/comment/${did}`);
 };
 
