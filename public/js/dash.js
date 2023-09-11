@@ -26,8 +26,9 @@ const updateButtonHandler = async (event) => {
 // This caputures button clicked to initiate add-comment (takes to add-comment-form)
 const addCommentHandler = async (event) => {
   event.preventDefault();
-  console.log('$$$$$$$$$$$$ ', event.target);
-  const did = event.target.getAttribute('data-id');
+  const did = event.currentTarget.id;
+  console.log('$$$$$$$$$$$$... did: ', did, '\tevent... ', event.target);
+  // const did = event.target.getAttribute('data-id');
   // console.log('$$$$$$$$$$$$$$$$$$$... ', event.target, '\tdid... ', did);
   document.location.replace(`/comment/${did}`);
 };
