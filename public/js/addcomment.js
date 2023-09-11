@@ -2,7 +2,6 @@ const newCommFormHandler = async (event) => {
     event.preventDefault();
     const contents = $('#comment-contents').val();
     const blog_id = event.target.id;
-    
     if (contents) {
         console.log('New comment being made');
         const response = await fetch(`/api/comms`, {
